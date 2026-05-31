@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en-IN" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Best Web Development Agency in Uttar Pradesh | Novera Labs</title>
+  <meta name="description" content="Novera Labs — Uttar Pradesh's leading web development, app development, SEO & digital solutions agency. No false promises, only real results. Zero hidden charges."/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Novera Labs"/>
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --brand: #7c9e8a;
+      --brand-dark: #5e7d6b;
+      --ink: #111111;
+      --on-primary: #ffffff;
+      --canvas: #ffffff;
+      --soft-cloud: #f4f4f4;
+      --hairline: #e8e8e8;
+      --hairline-hard: #d0d0d0;
+      --charcoal: #555555;
+      --mute: #888888;
+      --stone: #aaaaaa;
+      --success-bright: #22c55e;
+      --disp: 'Barlow Condensed', sans-serif;
+      --font: 'Barlow', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 100px;
+      --r-full: 9999px;
+      --safe: env(safe-area-inset-bottom, 0px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #f0f0f0;
+        --on-primary: #ffffff;
+        --canvas: #111111;
+        --soft-cloud: #1e1e1e;
+        --hairline: #2a2a2a;
+        --hairline-hard: #3a3a3a;
+        --charcoal: #aaaaaa;
+        --mute: #777777;
+        --stone: #555555;
+      }
+      .nav { background: rgba(17,17,17,0.96); }
+      .footer { background: #000 !important; }
+      #jpanel { background: var(--canvas); border-color: var(--hairline); }
+      #jhead { background: var(--soft-cloud); border-color: var(--hairline); }
+      .jmsg.bot { background: var(--soft-cloud); color: var(--ink); }
+      .jmsg.user { background: #2a2a2a; color: #fff; }
+      #jchips { border-color: var(--hairline); background: var(--canvas); }
+      .jchip { background: var(--soft-cloud); color: var(--ink); border-color: var(--hairline); }
+      #jinputrow { border-color: var(--hairline); background: var(--canvas); }
+      #jinput { background: var(--soft-cloud); color: var(--ink); border-color: var(--hairline-hard); }
+      #jinput::placeholder { color: var(--stone); }
+      .lm-panel { background: var(--canvas); }
+      .lm-header { border-color: var(--hairline); }
+      .lm-body h3 { color: var(--ink); }
+      .lm-body, .lm-body li, .lm-body p { color: var(--charcoal); }
+      .lm-body strong, .lm-body h3 { color: var(--ink); }
+      .lb-sheet { background: var(--canvas); border-color: var(--hairline); }
+      .service-panel.active { background: var(--soft-cloud); }
+      .testi-card { background: var(--soft-cloud); }
+      details.faq-item { border-color: var(--hairline); }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font);
+      background: var(--canvas);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      overscroll-behavior-y: none;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+
+    .wrap { max-width: 480px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── TYPOGRAPHY ── */
+    .t-campaign {
+      font-family: var(--disp);
+      font-size: clamp(72px, 22vw, 120px);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      font-weight: 800;
+    }
+    .t-xl { font-family: var(--disp); font-size: 32px; font-weight: 700; line-height: 1.1; text-transform: uppercase; }
+    .t-lg { font-size: 22px; font-weight: 600; line-height: 1.2; }
+    .t-strong { font-size: 16px; font-weight: 500; line-height: 1.5; }
+    .t-body { font-size: 16px; font-weight: 400; line-height: 1.6; }
+    .t-cap { font-size: 14px; font-weight: 500; line-height: 1.5; }
+    .t-eye { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      height: 48px; padding: 0 28px;
+      border: none; border-radius: var(--r-lg);
+      font-size: 15px; font-weight: 500;
+      cursor: pointer; white-space: nowrap;
+      transition: opacity 0.15s, transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(0.97); opacity: 0.85; }
+    .btn-primary { background: var(--ink); color: var(--on-primary); }
+    .btn-secondary { background: var(--soft-cloud); color: var(--ink); }
+    .btn-on-image { background: var(--canvas); color: var(--ink); }
+    .btn-ghost { background: transparent; color: var(--canvas); border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-brand { background: var(--brand); color: #fff; }
+    .btn-sm { height: 38px; padding: 0 18px; font-size: 13px; border-radius: var(--r-lg); }
+    @media (hover: hover) {
+      .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(17,17,17,0.22); }
+      .btn-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+      .btn-brand:hover { background: var(--brand-dark); transform: translateY(-2px); }
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      height: 56px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(20px) saturate(200%);
+      -webkit-backdrop-filter: blur(20px) saturate(200%);
+      border-bottom: 1px solid var(--hairline);
+    }
+    @media (prefers-color-scheme: dark) {
+      .nav { background: rgba(17,17,17,0.96); }
+    }
+    .nav-inner {
+      max-width: 480px; margin: 0 auto; height: 100%;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 20px;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 28px; width: auto; display: block; filter: invert(0); }
+    @media (prefers-color-scheme: dark) { .nav-logo-img { filter: invert(1); } }
+    .nav-dot { display: none; }
+
+    /* ── MARQUEE ── */
+    .marquee {
+      margin-top: 56px;
+      background: var(--ink); color: var(--on-primary);
+      height: 36px; overflow: hidden;
+      display: flex; align-items: center;
+    }
+    .mq-track {
+      display: flex; white-space: nowrap;
+      animation: mqScroll 22s linear infinite;
+      width: max-content;
+    }
+    .mq-item { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 0 20px; }
+    .mq-sep { color: var(--brand); font-size: 14px; line-height: 1; }
+    @keyframes mqScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: calc(100svh - 92px);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.92) 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      padding: 0 20px 36px;
+      max-width: 480px; margin: 0 auto; width: 100%;
+    }
+    .hero-eye {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--brand);
+      margin-bottom: 16px;
+      opacity: 0; animation: fu 0.6s 0.2s forwards;
+    }
+    .hero-eye-line { display: block; width: 24px; height: 1px; background: var(--brand); }
+    .hero-title {
+      color: #ffffff;
+      opacity: 0; animation: fu 0.7s 0.4s forwards;
+    }
+    .hero-title em { font-style: normal; color: var(--brand); }
+    .hero-sub {
+      margin-top: 20px;
+      font-size: 15px; font-weight: 400; line-height: 1.65;
+      color: rgba(255,255,255,0.7);
+      max-width: 340px;
+      opacity: 0; animation: fu 0.7s 0.65s forwards;
+    }
+    .hero-btns {
+      margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap;
+      opacity: 0; animation: fu 0.7s 0.85s forwards;
+    }
+    @keyframes fu { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── STATS ── */
+    .stats {
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0;
+      overflow: hidden;
+    }
+    @media (prefers-color-scheme: dark) { .stats { background: #000; } }
+    .stats-inner { max-width: 480px; margin: 0 auto; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-card {
+      padding: 11px 8px;
+      position: relative;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--disp); font-size: 19px; font-weight: 600; line-height: 1;
+      letter-spacing: -0.3px; color: rgba(255,255,255,0.55);
+    }
+    .stat-num em { font-style: normal; color: rgba(124,158,138,0.7); }
+    .stat-lbl {
+      font-family: var(--mono); font-size: 7px; letter-spacing: 0.8px;
+      text-transform: uppercase; color: rgba(255,255,255,0.2);
+      margin-top: 3px; line-height: 1.4;
+    }
+
+    /* ── SECTION COMMON ── */
+    .sec { padding: 64px 20px; }
+    .sec-inner { max-width: 480px; margin: 0 auto; }
+    .sec-eye { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--brand); display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .sec-eye-line { display: block; width: 20px; height: 1px; background: var(--brand); }
+    .sec-title { font-family: var(--disp); font-size: clamp(28px, 8vw, 40px); font-weight: 800; line-height: 1.0; text-transform: uppercase; letter-spacing: -0.5px; }
+    .sec-body { font-size: 14px; line-height: 1.75; color: var(--charcoal); margin-top: 14px; }
+
+    /* reveal */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .rv.vis { opacity: 1; transform: translateY(0); }
+
+    /* ── SERVICES ── */
+    .services { background: var(--canvas); }
+    .srv-tabs { display: flex; background: var(--soft-cloud); border-radius: var(--r-lg); padding: 4px; gap: 4px; margin: 28px 0; }
+    .srv-tab {
+      flex: 1; height: 40px; border: none; border-radius: calc(var(--r-lg) - 2px);
+      background: transparent; color: var(--mute);
+      font-family: var(--font); font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
+      cursor: pointer; transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .srv-tab.active { background: var(--canvas); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
+    .service-panel { display: none; }
+    .service-panel.active { display: block; animation: fadeup 0.3s cubic-bezier(0.22,1,0.36,1) both; }
+    @keyframes fadeup { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    .srv-card {
+      background: var(--soft-cloud); border-radius: var(--r-md);
+      margin-bottom: 10px;
+      border: 1px solid var(--hairline);
+      transition: border-color 0.22s, transform 0.22s;
+      position: relative; overflow: hidden;
+    }
+    .srv-card:hover { border-color: var(--brand); transform: translateY(-2px); }
+    .srv-card-img {
+      width: 100%; height: 160px;
+      object-fit: cover; object-position: center;
+      display: block;
+      filter: grayscale(18%);
+      transition: filter 0.3s, transform 0.4s;
+    }
+    .srv-card:hover .srv-card-img { filter: grayscale(0%); transform: scale(1.03); }
+    .srv-card-body { padding: 18px 20px 20px; }
+    .srv-card-num {
+      font-family: var(--disp); font-size: 11px; font-weight: 600;
+      color: var(--brand); letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 6px; font-family: var(--mono);
+    }
+    .srv-card-name { font-family: var(--disp); font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .srv-card-desc { font-size: 13px; line-height: 1.7; color: var(--charcoal); margin-top: 6px; }
+    .srv-icon { display: none; }
+
+    /* ── CLIENTS ── */
+    .work { background: var(--soft-cloud); border-top: 1px solid var(--hairline); }
+    .client-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin-top: 28px;
+    }
+    .client-card {
+      background: var(--canvas); border-radius: var(--r-md);
+      border: 1px solid var(--hairline);
+      transition: border-color 0.22s, transform 0.22s;
+      display: block; text-decoration: none; color: inherit;
+      overflow: hidden;
+    }
+    .client-card:hover { border-color: var(--brand); transform: translateY(-2px); }
+    .client-card-img {
+      width: 100%; height: 90px;
+      object-fit: cover; object-position: center;
+      display: block;
+      filter: grayscale(15%);
+      transition: filter 0.3s, transform 0.4s;
+    }
+    .client-card:hover .client-card-img { filter: grayscale(0%); transform: scale(1.04); }
+    .client-card-body { padding: 14px 14px 16px; }
+    .client-name { font-family: var(--disp); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.2; }
+    .client-sub { font-family: var(--mono); font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: var(--mute); margin-top: 4px; }
+    .client-addr { font-size: 10px; line-height: 1.5; color: var(--charcoal); margin-top: 8px; border-top: 1px solid var(--hairline); padding-top: 8px; }
+
+    /* ── TECH TICKER ── */
+    .tech-ticker {
+      background: var(--ink); border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      height: 48px; overflow: hidden;
+      display: flex; align-items: center;
+    }
+    @media (prefers-color-scheme: dark) { .tech-ticker { background: #000; } }
+    .tt-track {
+      display: flex; white-space: nowrap;
+      animation: mqScroll 20s linear infinite;
+      width: max-content;
+    }
+    .tt-item { font-family: var(--disp); font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.45); padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .tt-item:hover { color: rgba(255,255,255,0.85); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--canvas); }
+    .testi-list { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
+    .testi-card {
+      background: var(--soft-cloud); border-radius: var(--r-md);
+      padding: 24px 20px; border-top: 2px solid var(--brand);
+      position: relative;
+    }
+    .testi-open {
+      font-family: var(--disp); font-size: 52px; font-weight: 800;
+      color: var(--brand); opacity: 0.2;
+      position: absolute; top: 16px; right: 18px; line-height: 1;
+    }
+    .testi-q { font-size: 14px; line-height: 1.75; color: var(--charcoal); margin-bottom: 20px; position: relative; z-index: 1; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--ink); color: var(--on-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--disp); font-size: 14px; font-weight: 700; flex-shrink: 0;
+    }
+    .testi-name { font-size: 14px; font-weight: 600; }
+    .testi-role { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mute); margin-top: 2px; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--ink); color: var(--on-primary);
+      padding: 72px 20px;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .cta-bg-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      opacity: 0.22;
+      filter: grayscale(30%);
+      z-index: 0;
+    }
+    .cta-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(17,17,17,0.55) 0%, rgba(17,17,17,0.72) 100%);
+    }
+    .cta-inner { position: relative; z-index: 2; max-width: 480px; margin: 0 auto; }
+    .cta-title { font-family: var(--disp); font-size: clamp(32px, 10vw, 52px); font-weight: 800; text-transform: uppercase; line-height: 0.95; letter-spacing: -1px; }
+    .cta-title em { font-style: normal; color: var(--brand); }
+    .cta-body { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.6); margin-top: 16px; }
+    .cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+
+    /* ── FAQ ── */
+    .faq { background: var(--soft-cloud); border-top: 1px solid var(--hairline); }
+    .faq-list { border-top: 1px solid var(--hairline); margin-top: 28px; }
+    details.faq-item { border-bottom: 1px solid var(--hairline); }
+    details.faq-item summary { list-style: none; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0; cursor: pointer; gap: 14px;
+      font-size: 15px; font-weight: 500; color: var(--ink);
+      line-height: 1.45; transition: color 0.15s;
+      -webkit-tap-highlight-color: transparent; user-select: none;
+    }
+    @media (hover: hover) { .faq-q:hover { color: var(--brand); } }
+    .faq-chevron { flex-shrink: 0; color: var(--mute); transition: transform 0.24s, color 0.15s; }
+    details[open] .faq-chevron { transform: rotate(180deg); color: var(--brand); }
+    .faq-a { padding-bottom: 18px; font-size: 14px; line-height: 1.8; color: var(--charcoal); }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--canvas); border-top: 1px solid var(--hairline); }
+    .contact-details { margin-top: 28px; display: flex; flex-direction: column; gap: 18px; }
+    .ci { display: flex; align-items: flex-start; gap: 14px; }
+    .ci-ico { width: 18px; height: 18px; color: var(--brand); flex-shrink: 0; margin-top: 2px; }
+    .ci-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mute); margin-bottom: 3px; }
+    .ci-val { font-size: 14px; }
+    .ci-val a { color: var(--ink); transition: color 0.15s; }
+    .ci-val a:hover { color: var(--brand); }
+    .cf { margin-top: 36px; display: flex; flex-direction: column; gap: 14px; }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cf-field { display: flex; flex-direction: column; gap: 6px; }
+    .cf-label { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mute); }
+    .cf-field input, .cf-field select, .cf-field textarea {
+      background: var(--soft-cloud); color: var(--ink);
+      border: 1px solid var(--hairline); border-radius: var(--r-sm);
+      padding: 11px 13px; font-size: 14px; outline: none;
+      transition: border-color 0.2s; appearance: none; -webkit-appearance: none;
+    }
+    .cf-field input:focus, .cf-field select:focus, .cf-field textarea:focus { border-color: var(--brand); }
+    .cf-field textarea { resize: vertical; min-height: 100px; }
+
+    /* ── PROCESS ── */
+    .process { background: var(--ink); color: var(--on-primary); padding: 64px 20px; }
+    .process-inner { max-width: 480px; margin: 0 auto; }
+    .process .sec-title { color: var(--on-primary); }
+    .process .sec-body { color: rgba(255,255,255,0.6); }
+    .steps { margin-top: 36px; display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 18px; padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num { font-family: var(--disp); font-size: 36px; font-weight: 800; line-height: 1; color: var(--brand); flex-shrink: 0; width: 42px; }
+    .step-name { font-family: var(--disp); font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .step-desc { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.55); }
+
+    /* ── CHAT LAUNCHER ── */
+    #jlauncher {
+      position: fixed;
+      bottom: 24px; right: 16px;
+      z-index: 9999; width: 44px; height: 44px; border-radius: var(--r-full);
+      background: var(--ink); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 16px rgba(17,17,17,0.25);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    #jlauncher:hover { transform: scale(1.06); }
+    #jlauncher svg { fill: var(--on-primary); width: 18px; height: 18px; }
+    .jnotif { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background: var(--success-bright); border-radius: 50%; border: 2px solid var(--ink); }
+
+    /* ── CHAT PANEL ── */
+    #jpanel {
+      position: fixed;
+      bottom: 80px; right: 16px;
+      width: 320px; height: 480px;
+      background: var(--canvas); border: 1px solid var(--hairline);
+      border-radius: 14px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+      display: flex; flex-direction: column;
+      transform: scale(0.95) translateY(12px); opacity: 0; pointer-events: none;
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), opacity 0.18s;
+      z-index: 9998; overflow: hidden;
+    }
+    #jpanel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+    #jhead {
+      background: var(--soft-cloud); padding: 12px 14px;
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .javatar {
+      width: 36px; height: 36px; border-radius: var(--r-full);
+      background: var(--ink); border: 1.5px solid var(--hairline-hard);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative;
+    }
+    .javatar svg { fill: var(--on-primary); width: 18px; height: 18px; }
+    .jonline { position: absolute; bottom: 0; right: 0; width: 9px; height: 9px; background: var(--success-bright); border-radius: 50%; border: 2px solid var(--soft-cloud); }
+    .jinfo { flex: 1; }
+    .jname { font-family: var(--disp); font-size: 17px; font-weight: 700; letter-spacing: 1px; color: var(--ink); line-height: 1; }
+    .jsub { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mute); margin-top: 2px; }
+    #jclose { width: 26px; height: 26px; border-radius: var(--r-full); background: var(--hairline); border: none; color: var(--mute); font-size: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    #jbody { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth; justify-content: flex-end; }
+    .jmsg {
+      max-width: 85%; padding: 9px 13px;
+      border-radius: 14px; font-size: 13px; line-height: 1.55;
+      animation: jmsg-in 0.25s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .jmsg.bot { background: var(--soft-cloud); color: var(--ink); align-self: flex-start; border-bottom-left-radius: 4px; }
+    .jmsg.user { background: var(--ink); color: var(--on-primary); align-self: flex-end; border-bottom-right-radius: 4px; }
+    @keyframes jmsg-in { from { opacity:0; transform:translateY(8px) scale(0.95); } to { opacity:1; transform:none; } }
+    .jthink { align-self: flex-start; display: flex; gap: 4px; align-items: center; padding: 10px 13px; background: var(--soft-cloud); border-radius: 14px 14px 4px 14px; }
+    .jthink span { width: 6px; height: 6px; background: var(--mute); border-radius: 50%; animation: jdot 1.2s ease-in-out infinite; }
+    .jthink span:nth-child(2) { animation-delay: 0.2s; }
+    .jthink span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes jdot { 0%,80%,100%{opacity:0.2; transform:scale(0.8);} 40%{opacity:1; transform:scale(1);} }
+    #jchips { padding: 6px 10px; display: flex; gap: 6px; flex-wrap: wrap; border-top: 1px solid var(--hairline); background: var(--canvas); }
+    .jchip { font-size: 11px; font-weight: 500; padding: 5px 11px; border-radius: var(--r-full); border: 1px solid var(--hairline); background: var(--soft-cloud); color: var(--ink); cursor: pointer; transition: background 0.12s; white-space: nowrap; }
+    .jchip:hover { background: var(--hairline); }
+    #jinputrow { display: flex; gap: 6px; padding: 8px 10px; border-top: 1px solid var(--hairline); background: var(--canvas); flex-shrink: 0; }
+    #jinput { flex: 1; height: 36px; border-radius: var(--r-lg); border: 1px solid var(--hairline-hard); background: var(--soft-cloud); color: var(--ink); padding: 0 12px; font-size: 13px; outline: none; }
+    #jinput:focus { border-color: var(--mute); }
+    #jinput::placeholder { color: var(--stone); }
+    #jsend { width: 36px; height: 36px; border-radius: var(--r-full); border: none; background: var(--ink); color: var(--on-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; }
+    #jsend:hover { background: var(--brand); }
+
+    /* ── SHEET / LIGHTBOX ── */
+    .lb { position: fixed; inset: 0; z-index: 999; display: flex; align-items: flex-end; justify-content: center; background: rgba(0,0,0,0.35); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; visibility: hidden; transition: opacity 0.24s, visibility 0.24s; }
+    .lb.open { opacity: 1; pointer-events: all; visibility: visible; }
+    .lb-sheet { position: relative; width: 100%; max-width: 480px; background: var(--canvas); border-radius: 14px 14px 0 0; border: 1px solid var(--hairline); border-bottom: 0; padding: 20px 20px calc(24px + var(--safe)); display: flex; flex-direction: column; gap: 10px; transform: translateY(100%); transition: transform 0.34s cubic-bezier(0.32,0.72,0,1); }
+    .lb.open .lb-sheet { transform: translateY(0); }
+    .lb-handle { width: 40px; height: 4px; border-radius: 4px; background: var(--hairline-hard); margin: 0 auto 8px; }
+    .lb-close { position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border-radius: var(--r-full); background: var(--soft-cloud); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--ink); }
+    .lb-name { font-family: var(--disp); font-size: 26px; font-weight: 800; letter-spacing: 0.5px; }
+    .lb-desc { font-size: 14px; font-weight: 400; line-height: 1.65; color: var(--charcoal); }
+
+    /* ── LEGAL MODAL ── */
+    .lm { position: fixed; inset: 0; z-index: 9999; display: none; }
+    .lm.open { display: flex; flex-direction: column; }
+    .lm-panel { position: absolute; inset: 0; background: var(--canvas); display: flex; flex-direction: column; overflow: hidden; }
+    .lm-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--hairline); flex-shrink: 0; }
+    .lm-header-name { font-family: var(--disp); font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+    .lm-close { width: 32px; height: 32px; border-radius: var(--r-full); background: var(--soft-cloud); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--ink); }
+    .lm-body { flex: 1; overflow-y: auto; padding: 24px 20px calc(32px + var(--safe)); }
+    .lm-body h3 { font-family: var(--disp); font-size: 18px; font-weight: 700; text-transform: uppercase; margin: 24px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--hairline); }
+    .lm-body h3:first-child { margin-top: 0; }
+    .lm-body p, .lm-body li { font-size: 13px; line-height: 1.8; color: var(--charcoal); margin-bottom: 8px; }
+    .lm-body ol, .lm-body ul { padding-left: 18px; }
+
+    /* ── FOOTER ── */
+    .footer { background: #000; padding: 48px 20px calc(32px + var(--safe)); position: relative; overflow: hidden; }
+    .footer-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      opacity: 0.18;
+      z-index: 0;
+    }
+    .footer-inner { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .footer-logo-img { height: 36px; width: auto; display: block; filter: invert(1); opacity: 0.9; }
+    .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 280px; }
+    .footer-tel { font-family: var(--disp); font-size: 22px; font-weight: 700; letter-spacing: 1px; color: #fff; }
+    .footer-socials { display: flex; gap: 8px; }
+    .footer-soc { width: 36px; height: 36px; border-radius: var(--r-full); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #fff; transition: background 0.14s; }
+    .footer-soc:hover { background: rgba(255,255,255,0.14); }
+    .footer-rule { width: 100%; height: 1px; background: rgba(255,255,255,0.1); }
+    .footer-legal { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .footer-legal a { color: rgba(255,255,255,0.55); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* skip link */
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; background: var(--ink); color: var(--on-primary); padding: 10px 20px; font-size: 14px; font-weight: 500; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Novera Labs Main Navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Novera Labs Home">
+      <img src="assets/noveralabs.webp" alt="Novera Labs" class="nav-logo-img"/>
+    </a>
+    <a href="mailto:hello@noveralabs.co.in" class="btn btn-brand btn-sm" aria-label="Contact us">
+      Get a Quote ↗
+    </a>
+  </div>
+</nav>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-item">Web Development</span><span class="mq-sep">·</span><span class="mq-item">App Development</span><span class="mq-sep">·</span><span class="mq-item">SEO</span><span class="mq-sep">·</span><span class="mq-item">No False Promises</span><span class="mq-sep">·</span><span class="mq-item">Real Results</span><span class="mq-sep">·</span><span class="mq-item">Across Uttar Pradesh</span><span class="mq-sep">·</span><span class="mq-item">UI / UX Design</span><span class="mq-sep">·</span><span class="mq-item">Social Media</span><span class="mq-sep">·</span><span class="mq-item">Zero Hidden Charges</span><span class="mq-sep">·</span>
+    <!-- duplicate for seamless loop -->
+    <span class="mq-item">Web Development</span><span class="mq-sep">·</span><span class="mq-item">App Development</span><span class="mq-sep">·</span><span class="mq-item">SEO</span><span class="mq-sep">·</span><span class="mq-item">No False Promises</span><span class="mq-sep">·</span><span class="mq-item">Real Results</span><span class="mq-sep">·</span><span class="mq-item">Across Uttar Pradesh</span><span class="mq-sep">·</span><span class="mq-item">UI / UX Design</span><span class="mq-sep">·</span><span class="mq-item">Social Media</span><span class="mq-sep">·</span><span class="mq-item">Zero Hidden Charges</span><span class="mq-sep">·</span>
+  </div>
+</div>
+
+<main id="main" aria-label="Novera Labs main content">
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Novera Labs — Web Development & Tech Solutions, Uttar Pradesh">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="assets/6101149-uhd_2160_4096_30fps.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eye">
+      <span class="hero-eye-line"></span>
+      Uttar Pradesh's Digital Agency
+    </div>
+    <h1 class="t-campaign hero-title">BUILD<br>YOUR<br><em>DIGITAL</em><br>EMPIRE</h1>
+    <p class="visually-hidden">Novera Labs — Best web development agency across Uttar Pradesh — Lucknow, Kanpur, Prayagraj, Varanasi, Agra & Noida. Web development, app development, SEO, UI/UX design, and social media management. Zero hidden charges. No false promises, only real results.</p>
+    <p class="hero-sub">Premium web &amp; app development for ambitious businesses across Uttar Pradesh & India. Real results, zero hidden charges.</p>
+    <div class="hero-btns">
+      <a href="tel:+918888888888" class="btn btn-on-image">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call Now
+      </a>
+      <a href="#services" class="btn btn-ghost">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-card rv" id="s1">
+        <div class="stat-num">50<em>+</em></div>
+        <div class="stat-lbl">Projects<br>Delivered</div>
+      </div>
+      <div class="stat-card rv" id="s2">
+        <div class="stat-num">3<em>+</em></div>
+        <div class="stat-lbl">Years<br>Experience</div>
+      </div>
+      <div class="stat-card rv" id="s3">
+        <div class="stat-num">40<em>+</em></div>
+        <div class="stat-lbl">Happy<br>Clients</div>
+      </div>
+      <div class="stat-card rv" id="s4">
+        <div class="stat-num">5<em>★</em></div>
+        <div class="stat-lbl">Avg<br>Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec services" id="services">
+  <div class="sec-inner">
+    <div class="sec-eye rv"><span class="sec-eye-line"></span>What We Do</div>
+    <h2 class="sec-title rv">OUR<br>SERVICES</h2>
+    <p class="sec-body rv">From concept to launch — we build digital products that perform. No fluff, just craft.</p>
+
+    <div class="srv-tabs rv" role="tablist" aria-label="Service categories">
+      <button class="srv-tab active" onclick="switchSrvTab(0)" role="tab" aria-selected="true">Web &amp; App</button>
+      <button class="srv-tab" onclick="switchSrvTab(1)" role="tab" aria-selected="false">Growth</button>
+      <button class="srv-tab" onclick="switchSrvTab(2)" role="tab" aria-selected="false">Design</button>
+    </div>
+
+    <!-- Panel 0: Web & App -->
+    <div class="service-panel active" id="sp0">
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/web-development.jpg" alt="Web Development" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">01 · Web Dev</div>
+          <div class="srv-card-name">Web Development</div>
+          <div class="srv-card-desc">Custom websites and web applications built with modern frameworks. Fast, SEO-ready, and built to convert visitors into customers.</div>
+        </div>
+      </div>
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/app-development.jpg" alt="App Development" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">02 · Mobile</div>
+          <div class="srv-card-name">App Development</div>
+          <div class="srv-card-desc">Android and iOS apps that delight users. From MVPs to full-scale applications — built right the first time.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 1: Growth -->
+    <div class="service-panel" id="sp1">
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/seo.jpg" alt="SEO" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">03 · SEO</div>
+          <div class="srv-card-name">SEO</div>
+          <div class="srv-card-desc">Rank higher on Google. We handle technical SEO, content strategy, and local SEO to drive qualified traffic to your business.</div>
+        </div>
+      </div>
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/social-media.jpg" alt="Social Media" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">04 · Social</div>
+          <div class="srv-card-name">Social Media</div>
+          <div class="srv-card-desc">Strategy, content creation, and management across Instagram, Facebook, and LinkedIn. Build an audience that trusts you.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Design -->
+    <div class="service-panel" id="sp2">
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/ui_ux-design.jpg" alt="UI/UX Design" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">05 · Design</div>
+          <div class="srv-card-name">UI / UX Design</div>
+          <div class="srv-card-desc">Interfaces people love to use. We design with purpose — every pixel, every interaction, every flow crafted for real users.</div>
+        </div>
+      </div>
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/digital-solutions.jpg" alt="Digital Solutions" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">06 · Solutions</div>
+          <div class="srv-card-name">Digital Solutions</div>
+          <div class="srv-card-desc">Custom integrations, automation, CRM setup, and digital strategy consulting. We solve complex problems with clean solutions.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH TICKER -->
+<div class="tech-ticker" aria-hidden="true">
+  <div class="tt-track">
+    <span class="tt-item">React</span><span class="tt-item">Next.js</span><span class="tt-item">Node.js</span><span class="tt-item">Flutter</span><span class="tt-item">WordPress</span><span class="tt-item">Figma</span><span class="tt-item">Shopify</span><span class="tt-item">Firebase</span><span class="tt-item">MongoDB</span><span class="tt-item">Tailwind</span><span class="tt-item">AWS</span><span class="tt-item">Vercel</span>
+    <span class="tt-item">React</span><span class="tt-item">Next.js</span><span class="tt-item">Node.js</span><span class="tt-item">Flutter</span><span class="tt-item">WordPress</span><span class="tt-item">Figma</span><span class="tt-item">Shopify</span><span class="tt-item">Firebase</span><span class="tt-item">MongoDB</span><span class="tt-item">Tailwind</span><span class="tt-item">AWS</span><span class="tt-item">Vercel</span>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="sec work" id="work">
+  <div class="sec-inner">
+    <div class="sec-eye rv"><span class="sec-eye-line"></span>Clients</div>
+    <h2 class="sec-title rv">BUSINESSES<br>WE'VE WORKED<br>WITH</h2>
+    <p class="sec-body rv">Proud to have partnered with some great businesses across Uttar Pradesh.</p>
+    <div class="client-grid rv">
+      <a class="client-card" href="https://share.google/ScKDjF41TstPpmaG9" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/royal-cafe.jpg" alt="Royal Cafe &amp; Dining" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Royal Cafe &amp; Dining</div>
+          <div class="client-sub">RCD · Serves Royally</div>
+          <div class="client-addr">Shop 11-14, 2nd Floor, IP Sigra Mall, Guru Nanak Nagar Colony, Chetganj, Varanasi, UP 221001</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/IE23rV1DqK8GU8iuk" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/metro.jpg" alt="Metro" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Metro</div>
+          <div class="client-sub">Retail</div>
+          <div class="client-addr">Shop No. 10, Gr. Flr, Vinayak Plaza, Maldahiya, Varanasi, UP 221002</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/ubjOX1A2HGjHKNlxH" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/mysteria.jpg" alt="Mysteria" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Mysteria</div>
+          <div class="client-sub">Café · Diner · Games</div>
+          <div class="client-addr">1st Floor, Plot B27/93-D-A, above Royal Jewellers, near Murikatta Baba Mandir, Bhelupur, Varanasi, UP 221010</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/yDfWDKUxWZ9SbnXUp" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/bella-rosa.jpg" alt="Bella Rosa" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Bella Rosa</div>
+          <div class="client-sub">Pamper Yourself to Perfection</div>
+          <div class="client-addr">31, Raghunath Nagar Colony, Sri Nagar, Mahmoorganj, Varanasi, UP 221010</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/8oF7br4IYF9OShHxq" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/shahab-and-sons.jpg" alt="Shahab &amp; Sons" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Shahab &amp; Sons</div>
+          <div class="client-sub">Cosmetics &amp; Wholesale</div>
+          <div class="client-addr">Ck. 47/12, Sultan Katra, Masjid Wali Gali Sarai, Harha, Varanasi, UP 221001</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/9bD9oX5ZuxDyGbpRG" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/shubham-enterprises.jpg" alt="Shubham Enterprises" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Shubham Enterprises</div>
+          <div class="client-sub">Smart Phone for Smart People</div>
+          <div class="client-addr">Shop No. 4, opp. Axis Bank, Shastri Nagar, Sigra, Varanasi, UP 221002</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://www.google.com/travel/search?ts=CAESCgoCCAMKAggDEAAaHBIaEhQKBwjqDxAGGAYSBwjqDxAGGAcYATICEAAqBwoFOgNJTlI&qs=CAEyFENnc0k0OE9ELXNXSmlfU2xBUkFCOApCCREzpfu0S1eDuEIJEeN2eI-o42ZHQgkR1MFqn0sFur9aPDI6qgE3EAEyHhABIhr7gIpXJXhLuplh-H4gElX2KSC3jf6vHRyTnjITEAIiD3RoZSBiYW5hcmFzIGlubg&utm_campaign=sharing&utm_medium=link_btn&utm_source=htls" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/banaras-inn.jpg" alt="The Banaras Inn" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">The Banaras Inn</div>
+          <div class="client-sub">Experience the Soul · Varanasi</div>
+          <div class="client-addr">C-19/128, Nanak Nagar Colony, Sigra, Varanasi, UP 221010 (Opp. Dress Land)</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/LDoP53pHyGnDyPRNW" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/rk-glass-plywood.jpg" alt="New R K Glass &amp; Plywood Centre" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">New R K Glass &amp; Plywood Centre</div>
+          <div class="client-sub">Building Materials</div>
+          <div class="client-addr">Bansphatak, Maheshpur, Varanasi, UP 221010</div>
+        </div>
+      </a>
+      <a class="client-card" href="https://share.google/wLSYT68qlLiTZmLPQ" target="_blank" rel="noopener noreferrer">
+        <img class="client-card-img" src="assets/clients/cross-woven.jpg" alt="Cross Woven" loading="lazy"/>
+        <div class="client-card-body">
+          <div class="client-name">Cross Woven</div>
+          <div class="client-sub">Finest Handloom Luxury</div>
+          <div class="client-addr">K.38/1, Golghar, Ghasi Tola, Varanasi, UP 221001 · 2nd Floor, Swastik City Center, Rathyatra–Mahmoorganj Rd, Jahumandi, Varanasi, UP 221002</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="sec-eye rv" style="color:rgba(255,255,255,0.5)"><span style="display:block;width:20px;height:1px;background:var(--brand);"></span>How It Works</div>
+    <h2 class="sec-title rv">OUR<br>PROCESS</h2>
+    <p class="sec-body rv">Simple, transparent, and built around your goals.</p>
+    <div class="steps">
+      <div class="step rv">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-name">Discovery Call</div>
+          <div class="step-desc">We understand your business, goals, and constraints. No obligation — just an honest conversation.</div>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-name">Strategy & Proposal</div>
+          <div class="step-desc">Clear scope, fixed timeline, fixed price. Zero hidden charges. You know exactly what you're getting.</div>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-name">Design & Build</div>
+          <div class="step-desc">Weekly updates and reviews. You're always in the loop, never in the dark.</div>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-name">Launch & Support</div>
+          <div class="step-desc">We don't disappear after delivery. Ongoing support, maintenance, and growth — we're your long-term partner.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec testimonials" id="testimonials">
+  <div class="sec-inner">
+    <div class="sec-eye rv"><span class="sec-eye-line"></span>Client Love</div>
+    <h2 class="sec-title rv">WHAT CLIENTS<br>SAY</h2>
+    <div class="testi-list">
+      <div class="testi-card rv">
+        <div class="testi-open">"</div>
+        <div class="testi-q">Novera Labs delivered our website in 3 weeks, exactly as promised. Our online inquiries went up 4× the very next month. No fluff, just results.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">RS</div>
+          <div>
+            <div class="testi-name">Rahul Sharma</div>
+            <div class="testi-role">Founder, Kashi Krafts</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card rv">
+        <div class="testi-open">"</div>
+        <div class="testi-q">The FarmLink app they built for us is rock-solid. The team is incredibly responsive and genuinely cares about your success. Best investment we made.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">PV</div>
+          <div>
+            <div class="testi-name">Priya Verma</div>
+            <div class="testi-role">CEO, FarmLink India</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card rv">
+        <div class="testi-open">"</div>
+        <div class="testi-q">Our Google ranking jumped from page 4 to #1 in under 3 months. The SEO work Novera Labs did transformed our foot traffic completely.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Anand Kumar</div>
+            <div class="testi-role">Owner, Prayagraj Sweets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="cta">
+  <img class="cta-bg-img" src="assets/readytobuild_.jpg" alt="" aria-hidden="true"/>
+  <div class="cta-overlay"></div>
+  <div class="cta-inner">
+    <div class="sec-eye rv" style="justify-content:center;color:rgba(255,255,255,0.5)"><span style="display:block;width:20px;height:1px;background:var(--brand);"></span>Ready to Build?</div>
+    <h2 class="cta-title rv">LET'S<br>BUILD<br><em>SOMETHING</em><br>GREAT</h2>
+    <p class="cta-body rv">Start with a free 30-minute discovery call. No obligation. No sales pitch. Just honest advice on what your business needs.</p>
+    <div class="cta-btns rv">
+      <a href="tel:+918888888888" class="btn btn-on-image">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call Now
+      </a>
+      <a href="mailto:hello@noveralabs.co.in" class="btn btn-ghost">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq" id="faq">
+  <div class="sec-inner">
+    <div class="sec-eye rv"><span class="sec-eye-line"></span>FAQs</div>
+    <h2 class="sec-title rv">COMMON<br>QUESTIONS</h2>
+    <div class="faq-list rv">
+      <details class="faq-item">
+        <summary class="faq-q">
+          How much does a website cost?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">Every project is different. A basic business website starts around ₹15,000. E-commerce, custom apps, or complex platforms are quoted based on scope. We share a detailed, fixed-price proposal — no surprises.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          How long does it take to build a website?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">A typical business website takes 2–4 weeks. Custom web applications take 6–12 weeks. Mobile apps typically take 8–14 weeks depending on complexity. We always give you a clear timeline upfront.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Do you work with businesses across all of UP?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">Yes! We serve businesses across all of Uttar Pradesh — Lucknow, Kanpur, Prayagraj, Varanasi, Agra, Noida, Mathura, and beyond. We also work with clients pan-India and internationally. Everything can be handled remotely, efficiently.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What happens after the website is launched?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">We offer maintenance packages, hosting support, and ongoing growth services. We don't disappear after delivery — we aim to be your long-term technology partner.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          How does SEO actually work and how long does it take?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">SEO is a long-term investment. You typically start seeing meaningful results in 60–120 days. We handle technical SEO, local SEO (Google Business Profile), content, and link-building. No black-hat tricks — only strategies that last.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="sec-inner">
+    <div class="sec-eye rv"><span class="sec-eye-line"></span>Get In Touch</div>
+    <h2 class="sec-title rv">START YOUR<br>PROJECT</h2>
+    <p class="sec-body rv">Fill in the form or just give us a call. We'll respond within 24 hours.</p>
+
+    <div class="contact-details rv">
+      <div class="ci">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div class="ci-lbl">Branch 1 — Varanasi</div>
+          <div class="ci-val">K.38/1, Golghar, Ghasi Tola,<br>Varanasi, UP 221001 (2nd Floor)</div>
+        </div>
+      </div>
+      <div class="ci">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div class="ci-lbl">Branch 2 — Varanasi</div>
+          <div class="ci-val">Swastik City Center,<br>Rathyatra–Mahmoorganj Rd, Jahumandi,<br>Varanasi, UP 221002</div>
+        </div>
+      </div>
+      <div class="ci">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div>
+          <div class="ci-lbl">Email</div>
+          <div class="ci-val"><a href="mailto:hello@noveralabs.co.in">hello@noveralabs.co.in</a></div>
+        </div>
+      </div>
+      <div class="ci">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        <div>
+          <div class="ci-lbl">Website</div>
+          <div class="ci-val"><a href="https://noveralabs.co.in" target="_blank" rel="noopener">noveralabs.co.in</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cf rv">
+      <div class="cf-row">
+        <div class="cf-field">
+          <label class="cf-label" for="cf-name">Full Name</label>
+          <input type="text" id="cf-name" placeholder="Rahul Sharma"/>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-email">Email</label>
+          <input type="email" id="cf-email" placeholder="you@company.com"/>
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label class="cf-label" for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-service">Service</label>
+          <select id="cf-service">
+            <option value="" disabled selected>Select a service</option>
+            <option>Web Development</option>
+            <option>App Development</option>
+            <option>SEO</option>
+            <option>Social Media</option>
+            <option>UI / UX Design</option>
+            <option>Digital Solutions</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="cf-field">
+        <label class="cf-label" for="cf-msg">Your Project</label>
+        <textarea id="cf-msg" placeholder="Describe your goals, timeline, and budget…"></textarea>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;border-radius:var(--r-sm);" onclick="cfSubmit()">
+        Send Message ↗
+      </button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <video class="footer-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="assets/8632601-uhd_3840_2160_25fps.mp4" type="video/mp4">
+  </video>
+  <div class="footer-inner">
+    <img src="assets/noveralabs.webp" alt="Novera Labs" class="footer-logo-img"/>
+    <div class="footer-tagline">Empowering your digital journey, one solution at a time. Two branches in Varanasi &amp; across Uttar Pradesh.</div>
+    <a href="tel:+918888888888" class="footer-tel">+91 88888 88888</a>
+    <div class="footer-socials">
+      <a href="#" class="footer-soc" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="#" class="footer-soc" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="#" class="footer-soc" aria-label="WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      </a>
+    </div>
+    <div class="footer-rule"></div>
+    <div class="footer-legal">
+      © 2025 Novera Labs. All rights reserved. ·
+      <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a> ·
+      <a href="#" onclick="openLegal('terms');return false">Terms</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AI CHAT LAUNCHER -->
+<button id="jlauncher" aria-label="Chat with Novera Labs AI assistant" onclick="toggleChat()">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  <div class="jnotif"></div>
+</button>
+
+<!-- AI CHAT PANEL -->
+<div id="jpanel" role="dialog" aria-label="Novera Labs AI Chat" aria-modal="true">
+  <div id="jhead">
+    <div class="javatar">
+      <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      <div class="jonline"></div>
+    </div>
+    <div class="jinfo">
+      <div class="jname">Novera AI</div>
+      <div class="jsub">Usually replies instantly</div>
+    </div>
+    <button id="jclose" onclick="toggleChat()" aria-label="Close chat">✕</button>
+  </div>
+  <div id="jbody">
+    <div class="jmsg bot">Hi! 👋 I'm Novera's AI assistant. Ask me about our services, pricing, or how we can help your business.</div>
+  </div>
+  <div id="jchips">
+    <button class="jchip" onclick="askChip('How much does a website cost?')">💰 Pricing</button>
+    <button class="jchip" onclick="askChip('What services do you offer?')">🛠 Services</button>
+    <button class="jchip" onclick="askChip('How long to build a website?')">⏱ Timeline</button>
+  </div>
+  <div id="jinputrow">
+    <input id="jinput" type="text" placeholder="Ask anything…" onkeydown="if(event.key==='Enter')jSend()"/>
+    <button id="jsend" onclick="jSend()" aria-label="Send">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- LEGAL MODAL -->
+<div class="lm" id="lm" role="dialog" aria-modal="true">
+  <div class="lm-panel">
+    <div class="lm-header">
+      <div class="lm-header-name" id="lm-title">Privacy Policy</div>
+      <button class="lm-close" onclick="closeLegal()" aria-label="Close">✕</button>
+    </div>
+    <div class="lm-body" id="lm-body"></div>
+  </div>
+</div>
+
+<script>
+/* ── Service tabs ── */
+const srvTabs = document.querySelectorAll('.srv-tab');
+const srvPanels = document.querySelectorAll('.service-panel');
+function switchSrvTab(i) {
+  srvTabs.forEach((t,j) => { t.classList.toggle('active', i===j); t.setAttribute('aria-selected', i===j); });
+  srvPanels.forEach((p,j) => p.classList.toggle('active', i===j));
+}
+
+/* ── Reveal on scroll ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const allRvInParent = Array.from(e.target.parentElement.querySelectorAll('.rv'));
+    const idx = allRvInParent.indexOf(e.target);
+    setTimeout(() => {
+      e.target.classList.add('vis');
+    }, Math.min(idx < 0 ? 0 : idx, 4) * 80);
+    io.unobserve(e.target);
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ── Chat ── */
+let jOpen = false;
+function toggleChat() {
+  jOpen = !jOpen;
+  document.getElementById('jpanel').classList.toggle('open', jOpen);
+}
+function jSend() {
+  const inp = document.getElementById('jinput');
+  const q = inp.value.trim();
+  if (!q) return;
+  inp.value = '';
+  addMsg(q, 'user');
+  document.getElementById('jchips').style.display = 'none';
+  const think = document.createElement('div');
+  think.className = 'jthink';
+  think.innerHTML = '<span></span><span></span><span></span>';
+  document.getElementById('jbody').appendChild(think);
+  scrollJ();
+  callAI(q).then(r => { think.remove(); addMsg(r, 'bot'); scrollJ(); });
+}
+function askChip(q) {
+  document.getElementById('jinput').value = q;
+  jSend();
+}
+function addMsg(text, who) {
+  const d = document.createElement('div');
+  d.className = `jmsg ${who}`;
+  d.textContent = text;
+  document.getElementById('jbody').appendChild(d);
+}
+function scrollJ() {
+  const b = document.getElementById('jbody');
+  b.scrollTop = b.scrollHeight;
+}
+function callAI(q) {
+  const text = q.toLowerCase();
+
+  if (/price|cost|how much|pricing|charge|fee|rate|₹/.test(text))
+    return Promise.resolve("Our pricing starts at ₹15,000 for websites, ₹50,000 for apps, and ₹8,000/month for SEO. All fixed price — zero hidden charges. Want an exact quote? Call us or email hello@noveralabs.co.in.");
+
+  if (/web|website|landing page|ecommerce|e-commerce/.test(text))
+    return Promise.resolve("We build custom websites and web apps using modern frameworks — fast, SEO-ready, and built to convert. Websites typically take 2–4 weeks. Drop us a line at hello@noveralabs.co.in to get started.");
+
+  if (/app|android|ios|mobile|flutter/.test(text))
+    return Promise.resolve("We develop Android and iOS apps — from MVPs to full-scale products. Timelines are typically 8–14 weeks depending on complexity. Reach us at hello@noveralabs.co.in for a free scoping call.");
+
+  if (/seo|google|rank|search|traffic/.test(text))
+    return Promise.resolve("We handle technical SEO, local SEO, Google Business Profile, content and link-building. Meaningful results usually show in 60–120 days. Email hello@noveralabs.co.in to discuss your goals.");
+
+  if (/social|instagram|facebook|linkedin|content/.test(text))
+    return Promise.resolve("We manage strategy, content creation, and day-to-day management across Instagram, Facebook, and LinkedIn. Get in touch at hello@noveralabs.co.in.");
+
+  if (/design|ui|ux|figma|wireframe/.test(text))
+    return Promise.resolve("We design interfaces people love — from wireframes to full UI systems. Every pixel crafted for real users. Email hello@noveralabs.co.in to share your brief.");
+
+  if (/time|timeline|how long|deadline|duration|week/.test(text))
+    return Promise.resolve("Websites take 2–4 weeks, web apps 6–12 weeks, and mobile apps 8–14 weeks. We give you a clear timeline upfront — no guessing.");
+
+  if (/service|offer|what do you|what can you/.test(text))
+    return Promise.resolve("We offer Web Development, App Development, SEO, Social Media Management, UI/UX Design, and Digital Solutions. Which one can we help you with?");
+
+  if (/location|address|office|where|branch|varanasi/.test(text))
+    return Promise.resolve("We have two offices in Varanasi — Branch 1: K.38/1, Golghar, Ghasi Tola (2nd Floor, 221001). Branch 2: Swastik City Center, Rathyatra–Mahmoorganj Rd, Jahumandi (221002).");
+
+  if (/contact|email|call|phone|reach|talk|speak/.test(text))
+    return Promise.resolve("You can reach us at hello@noveralabs.co.in or call us directly. We respond within 24 hours and offer a free 30-minute discovery call — no obligation.");
+
+  if (/hello|hi|hey|namaste/.test(text))
+    return Promise.resolve("Hi there! 👋 I'm Novera's assistant. Ask me about our services, pricing, timelines, or offices — I'm happy to help.");
+
+  if (/thank|thanks/.test(text))
+    return Promise.resolve("You're welcome! Feel free to ask anything else, or reach us directly at hello@noveralabs.co.in.");
+
+  return Promise.resolve("Great question! For the best answer, drop us a line at hello@noveralabs.co.in or call us — we'll get back to you within 24 hours.");
+}
+
+/* ── Contact form ── */
+function cfSubmit() {
+  const name = document.getElementById('cf-name').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const phone = document.getElementById('cf-phone').value.trim();
+  const service = document.getElementById('cf-service').value;
+  const msg = document.getElementById('cf-msg').value.trim();
+  if (!name || !email || !msg) { alert('Please fill in your name, email, and message.'); return; }
+  const body = [
+    msg,
+    '',
+    'From: ' + name,
+    'Email: ' + email,
+    phone ? 'Phone: ' + phone : '',
+    service ? 'Service: ' + service : ''
+  ].filter(Boolean).join('\n');
+  const m = `mailto:hello@noveralabs.co.in?subject=${encodeURIComponent('Project Enquiry from ' + name)}&body=${encodeURIComponent(body)}`;
+  window.location.href = m;
+}
+
+/* ── Legal ── */
+const legalContent = {
+  privacy: {
+    title: 'Privacy Policy',
+    body: `<h3>1. Information We Collect</h3>
+<p>We collect information you provide directly to us, such as when you fill out our contact form, call us, or send an email. This includes your name, email address, phone number, and project details.</p>
+<h3>2. How We Use Your Information</h3>
+<p>We use the information we collect to respond to your inquiries, provide our services, send project updates, and improve our offerings. We never sell your personal data to third parties.</p>
+<h3>3. Data Security</h3>
+<p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction.</p>
+<h3>4. Cookies</h3>
+<p>Our website may use cookies to improve your browsing experience. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+<h3>5. Contact</h3>
+<p>For privacy-related queries, contact us at hello@noveralabs.co.in or write to us at hello@noveralabs.co.in.</p>`
+  },
+  terms: {
+    title: 'Terms of Service',
+    body: `<h3>1. Acceptance of Terms</h3>
+<p>By engaging Novera Labs for services, you agree to these Terms of Service. If you do not agree, please do not engage our services.</p>
+<h3>2. Services</h3>
+<p>Novera Labs provides web development, app development, SEO, social media management, UI/UX design, and digital solutions. Specific deliverables, timelines, and pricing are defined in individual project proposals.</p>
+<h3>3. Payment</h3>
+<p>Payment terms are outlined in each project proposal. Typically, a 50% deposit is required to begin work, with the balance due upon project completion. All prices are inclusive of applicable GST.</p>
+<h3>4. Intellectual Property</h3>
+<p>Upon full payment, the client owns all custom work delivered by Novera Labs. We retain the right to showcase completed projects in our portfolio unless otherwise agreed in writing.</p>
+<h3>5. Limitation of Liability</h3>
+<p>Novera Labs' liability is limited to the total fees paid for the specific project in question. We are not liable for any indirect, incidental, or consequential damages.</p>
+<h3>6. Governing Law</h3>
+<p>These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Uttar Pradesh.</p>`
+  }
+};
+function openLegal(type) {
+  const content = legalContent[type];
+  document.getElementById('lm-title').textContent = content.title;
+  document.getElementById('lm-body').innerHTML = content.body;
+  document.getElementById('lm').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLegal() {
+  document.getElementById('lm').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
