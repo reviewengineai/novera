@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Best Web Development Agency in Uttar Pradesh | Novera Labs</title>
-  <meta name="description" content="Novera Labs Uttar Pradesh's leading web development, app development, SEO & digital solutions agency. No false promises, only real results. Zero hidden charges."/>
+  <meta name="description" content="Novera Labs Uttar Pradesh's leading web development, app development, SEO, digital marketing, performance marketing & content creation agency. No false promises, only real results. Zero hidden charges."/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="Novera Labs"/>
   <meta name="theme-color" content="#111111"/>
@@ -184,7 +184,7 @@
       width: max-content;
     }
     .mq-item { font-size: 11px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; padding: 0 16px; color: var(--ink-muted); }
-    .mq-sep { color: var(--surface-2); font-size: 12px; }
+    .mq-sep { color: rgba(255,255,255,0.18); font-size: 12px; }
     @keyframes mqScroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -201,40 +201,155 @@
     .hero-video {
       position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: cover; object-position: center;
-      opacity: 0.22;
+      opacity: 0.55;
+      transform: scale(1.04);
+      animation: heroZoom 18s ease-out forwards;
     }
+    @keyframes heroZoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.0); }
+    }
+    /* layered overlay: top vignette + bottom text-legibility ramp */
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(17,17,16,0.15) 0%, rgba(17,17,16,0.6) 60%, rgba(17,17,16,0.97) 100%);
+      background:
+        radial-gradient(ellipse 120% 60% at 50% 0%, rgba(17,17,16,0.55) 0%, transparent 70%),
+        linear-gradient(180deg,
+          transparent 0%,
+          rgba(17,17,16,0.18) 45%,
+          rgba(17,17,16,0.82) 75%,
+          rgba(17,17,16,0.97) 100%);
+    }
+    /* subtle grain texture overlay */
+    .hero-noise {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+    /* orange accent glow at bottom-left */
+    .hero-glow {
+      position: absolute; z-index: 1; pointer-events: none;
+      bottom: -60px; left: -40px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: glowPulse 4s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulse {
+      from { opacity: 0.7; transform: scale(1); }
+      to   { opacity: 1;   transform: scale(1.15); }
     }
     .hero-inner {
       position: relative; z-index: 2;
-      padding: 0 20px 48px;
+      padding: 0 20px 52px;
       max-width: 480px; margin: 0 auto; width: 100%;
     }
     .hero-eye {
       display: inline-flex; align-items: center; gap: 10px;
-      font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--ink-muted);
-      margin-bottom: 20px;
-      opacity: 0; animation: fu 0.6s 0.2s forwards;
+      font-size: 11px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.55);
+      margin-bottom: 22px;
+      opacity: 0; animation: fu 0.7s 0.15s forwards;
     }
-    .hero-eye-line { display: block; width: 20px; height: 1px; background: var(--brand); }
+    .hero-eye-line { display: block; width: 20px; height: 1px; background: var(--brand); opacity: 0.6; }
+    .hero-brand-label {
+      font-size: 12px; font-weight: 500; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+      opacity: 0; animation: fu 0.7s 0.15s forwards;
+    }
     .hero-title {
       color: var(--ink);
-      opacity: 0; animation: fu 0.7s 0.4s forwards;
+      opacity: 0; animation: fu 0.8s 0.35s forwards;
+      position: relative;
     }
-    .hero-title em { font-style: normal; color: var(--brand); }
+    /* brand word gets an accent underline stroke */
+    .hero-title em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--brand) 0%, #fb923c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    /* thin rule between title and sub */
+    .hero-rule {
+      display: block; width: 32px; height: 2px;
+      background: linear-gradient(90deg, var(--brand), transparent);
+      border-radius: 2px;
+      margin: 24px 0 20px;
+      opacity: 0; animation: fu 0.7s 0.6s forwards;
+    }
     .hero-sub {
-      margin-top: 24px;
-      font-size: 18px; font-weight: 400; line-height: 1.30; letter-spacing: -0.18px;
-      color: var(--ink-muted);
-      max-width: 340px;
-      opacity: 0; animation: fu 0.7s 0.65s forwards;
+      font-size: 17px; font-weight: 400; line-height: 1.45; letter-spacing: -0.17px;
+      color: rgba(255,255,255,0.6);
+      max-width: 320px;
+      opacity: 0; animation: fu 0.7s 0.72s forwards;
+    }
+    /* pill badges row */
+    .hero-badges {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px;
+      opacity: 0; animation: fu 0.7s 0.88s forwards;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.3px;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--r-pill);
+      padding: 5px 10px;
+      backdrop-filter: blur(8px);
     }
     .hero-btns {
-      margin-top: 32px; display: flex; gap: 10px; flex-wrap: wrap;
-      opacity: 0; animation: fu 0.7s 0.85s forwards;
+      margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap;
+      opacity: 0; animation: fu 0.7s 1.05s forwards;
+    }
+    /* primary CTA gets a brand glow on hover */
+    .hero-btns .btn-primary {
+      background: #fff;
+      color: #111;
+      box-shadow: 0 0 0 0 rgba(249,115,22,0);
+      transition: box-shadow 0.3s, opacity 0.15s, transform 0.15s;
+    }
+    .hero-btns .btn-primary:hover {
+      box-shadow: 0 0 24px 4px rgba(249,115,22,0.35);
+      opacity: 1;
+    }
+    /* ghost btn gets a glass look */
+    .hero-btns .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      color: rgba(255,255,255,0.85);
+    }
+    .hero-btns .btn-ghost:hover {
+      background: rgba(255,255,255,0.14);
+    }
+    /* scroll nudge */
+    .hero-scroll {
+      position: absolute; bottom: 20px; right: 20px; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      opacity: 0; animation: fu 0.7s 1.4s forwards;
+    }
+    .hero-scroll-label {
+      font-size: 9px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      writing-mode: vertical-rl; text-orientation: mixed;
+    }
+    .hero-scroll-line {
+      width: 1px; height: 32px;
+      background: linear-gradient(180deg, rgba(249,115,22,0.6) 0%, transparent 100%);
+      border-radius: 1px;
+      animation: scrollDrop 2s ease-in-out infinite;
+    }
+    @keyframes scrollDrop {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
     }
     @keyframes fu { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 
@@ -279,19 +394,23 @@
     .rv.vis { opacity: 1; transform: translateY(0); }
 
     /* ── SERVICES ── */
-    .services { background: var(--canvas); }
+    .services { background: var(--canvas); border-top: 1px solid var(--hairline-soft); }
     .srv-tabs {
       display: flex; background: var(--surface-1); border-radius: var(--r-pill);
       padding: 4px; gap: 4px; margin: 28px 0;
       border: 1px solid var(--hairline-soft);
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .srv-tabs::-webkit-scrollbar { display: none; }
     .srv-tab {
-      flex: 1; height: 40px; border: none; border-radius: var(--r-pill);
+      flex: 1 0 auto; min-width: 60px; height: 40px; border: none; border-radius: var(--r-pill);
       background: transparent; color: var(--ink-muted);
       font-family: var(--font); font-feature-settings: var(--font-feat);
-      font-size: 13px; font-weight: 500; letter-spacing: -0.13px;
+      font-size: 12px; font-weight: 500; letter-spacing: -0.12px;
       cursor: pointer; transition: background 0.18s, color 0.18s;
-      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: transparent; white-space: nowrap;
+      padding: 0 10px;
     }
     .srv-tab.active { background: var(--surface-2); color: var(--ink); }
     .service-panel { display: none; }
@@ -369,7 +488,7 @@
     .tt-item:hover { color: var(--ink); }
 
     /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--canvas); }
+    .testimonials { background: var(--canvas); border-top: 1px solid var(--hairline-soft); }
     .testi-list { display: flex; flex-direction: column; gap: 8px; margin-top: 28px; }
     .testi-card {
       background: var(--surface-1); border-radius: var(--r-xxl);
@@ -452,6 +571,7 @@
     .ci-val a:hover { opacity: 0.7; }
     .cf { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
     .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 360px) { .cf-row { grid-template-columns: 1fr; } }
     .cf-field { display: flex; flex-direction: column; gap: 6px; }
     .cf-label { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-muted); }
     .cf-field input, .cf-field select, .cf-field textarea {
@@ -463,6 +583,13 @@
       font-family: var(--font); font-feature-settings: var(--font-feat);
     }
     .cf-field input::placeholder, .cf-field textarea::placeholder { color: var(--ink-muted); }
+    .cf-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
     .cf-field input:focus, .cf-field select:focus, .cf-field textarea:focus {
       border-color: rgba(0,153,255,0.5);
       box-shadow: 0 0 0 1px rgba(0,153,255,0.15);
@@ -504,7 +631,8 @@
     #jpanel {
       position: fixed;
       bottom: 80px; right: 16px;
-      width: 320px; height: 480px;
+      width: min(320px, calc(100vw - 32px));
+      height: min(480px, calc(100svh - 100px));
       background: var(--surface-1);
       border: 1px solid var(--hairline);
       border-radius: var(--r-xxl);
@@ -582,7 +710,7 @@
     .lm-body ol, .lm-body ul { padding-left: 18px; }
 
     /* ── ABOUT ── */
-    .about { background: var(--canvas); }
+    .about { background: var(--canvas); border-top: 1px solid var(--hairline-soft); }
     .about-tabs {
       display: flex; background: var(--surface-1); border-radius: var(--r-pill);
       padding: 4px; gap: 4px; margin: 28px 0;
@@ -761,7 +889,7 @@
     .footer-video {
       position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: cover; object-position: center;
-      opacity: 0.08; z-index: 0;
+      opacity: 0.22; z-index: 0;
     }
     .footer-inner { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
     .footer-logo-img { height: 28px; width: auto; display: block; filter: invert(1); opacity: 0.7; }
@@ -808,9 +936,9 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="mq-track">
-    <span class="mq-item">Web Development</span><span class="mq-sep">·</span><span class="mq-item">App Development</span><span class="mq-sep">·</span><span class="mq-item">SEO</span><span class="mq-sep">·</span><span class="mq-item">AI-Powered Solutions</span><span class="mq-sep">·</span><span class="mq-item">No False Promises</span><span class="mq-sep">·</span><span class="mq-item">Real Results</span><span class="mq-sep">·</span><span class="mq-item">Across Uttar Pradesh</span><span class="mq-sep">·</span><span class="mq-item">UI / UX Design</span><span class="mq-sep">·</span><span class="mq-item">Social Media</span><span class="mq-sep">·</span><span class="mq-item">Zero Hidden Charges</span><span class="mq-sep">·</span>
+    <span class="mq-item">Web Development</span><span class="mq-sep">·</span><span class="mq-item">App Development</span><span class="mq-sep">·</span><span class="mq-item">SEO</span><span class="mq-sep">·</span><span class="mq-item">Digital Marketing</span><span class="mq-sep">·</span><span class="mq-item">Performance Marketing</span><span class="mq-sep">·</span><span class="mq-item">Content Creation</span><span class="mq-sep">·</span><span class="mq-item">AI-Powered Solutions</span><span class="mq-sep">·</span><span class="mq-item">No False Promises</span><span class="mq-sep">·</span><span class="mq-item">Real Results</span><span class="mq-sep">·</span><span class="mq-item">Across Uttar Pradesh</span><span class="mq-sep">·</span><span class="mq-item">UI / UX Design</span><span class="mq-sep">·</span><span class="mq-item">Social Media</span><span class="mq-sep">·</span><span class="mq-item">Zero Hidden Charges</span><span class="mq-sep">·</span>
     <!-- duplicate for seamless loop -->
-    <span class="mq-item">Web Development</span><span class="mq-sep">·</span><span class="mq-item">App Development</span><span class="mq-sep">·</span><span class="mq-item">SEO</span><span class="mq-sep">·</span><span class="mq-item">AI-Powered Solutions</span><span class="mq-sep">·</span><span class="mq-item">No False Promises</span><span class="mq-sep">·</span><span class="mq-item">Real Results</span><span class="mq-sep">·</span><span class="mq-item">Across Uttar Pradesh</span><span class="mq-sep">·</span><span class="mq-item">UI / UX Design</span><span class="mq-sep">·</span><span class="mq-item">Social Media</span><span class="mq-sep">·</span><span class="mq-item">Zero Hidden Charges</span><span class="mq-sep">·</span>
+    <span class="mq-item">Web Development</span><span class="mq-sep">·</span><span class="mq-item">App Development</span><span class="mq-sep">·</span><span class="mq-item">SEO</span><span class="mq-sep">·</span><span class="mq-item">Digital Marketing</span><span class="mq-sep">·</span><span class="mq-item">Performance Marketing</span><span class="mq-sep">·</span><span class="mq-item">Content Creation</span><span class="mq-sep">·</span><span class="mq-item">AI-Powered Solutions</span><span class="mq-sep">·</span><span class="mq-item">No False Promises</span><span class="mq-sep">·</span><span class="mq-item">Real Results</span><span class="mq-sep">·</span><span class="mq-item">Across Uttar Pradesh</span><span class="mq-sep">·</span><span class="mq-item">UI / UX Design</span><span class="mq-sep">·</span><span class="mq-item">Social Media</span><span class="mq-sep">·</span><span class="mq-item">Zero Hidden Charges</span><span class="mq-sep">·</span>
   </div>
 </div>
 
@@ -822,18 +950,30 @@
     <source src="assets/6101149-uhd_2160_4096_30fps.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
   <div class="hero-inner">
+    <div class="hero-brand-label">Novera Labs</div>
     <h1 class="t-campaign hero-title">BUILD<br>YOUR<br><em>DIGITAL</em><br>EMPIRE</h1>
-    <p class="visually-hidden">Novera Labs Best web development agency across Uttar Pradesh Lucknow, Kanpur, Prayagraj, Varanasi, Agra & Noida. Web development, app development, SEO, UI/UX design, and social media management. Zero hidden charges. No false promises, only real results.</p>
-    <p class="hero-sub">Premium web, app &amp; AI-powered solutions for ambitious businesses across Uttar Pradesh &amp; India. Real results, zero hidden charges.</p>
+    <p class="visually-hidden">Novera Labs Best web development agency across Uttar Pradesh Lucknow, Kanpur, Prayagraj, Varanasi, Agra & Noida. Web development, app development, SEO, digital marketing, performance marketing, content creation, UI/UX design, and social media management. Zero hidden charges. No false promises, only real results.</p>
+    <span class="hero-rule"></span>
+    <p class="hero-sub">Premium web, app, marketing &amp; AI solutions for ambitious businesses across India. Real results, zero hidden charges.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">50+ Projects Delivered</span>
+      <span class="hero-badge">Zero Hidden Charges</span>
+      <span class="hero-badge">No False Promises</span>
+    </div>
     <div class="hero-btns">
-      <a href="tel:+918888888888" class="btn btn-on-image">
+      <a href="tel:+918888888888" class="btn btn-primary">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
         Call Now
       </a>
-      <a href="#services" class="btn btn-ghost">Our Services</a>
+      <a href="#services" class="btn btn-ghost">Our Services ↓</a>
     </div>
   </div>
+
+
 </section>
 
 <!-- STATS -->
@@ -868,7 +1008,7 @@
 
     <div class="about-tabs rv" role="tablist" aria-label="About sections">
       <button class="about-tab active" onclick="switchAboutTab(0)" role="tab" aria-selected="true" aria-controls="ap0" id="atab-0">Our Studio</button>
-      <button class="about-tab" onclick="switchAboutTab(1)" role="tab" aria-selected="false" aria-controls="ap1" id="atab-1">Meet the Founder</button>
+      <button class="about-tab" onclick="switchAboutTab(1)" role="tab" aria-selected="false" aria-controls="ap1" id="atab-1">Co-Founders</button>
     </div>
 
     <!-- Panel 0: Our Studio -->
@@ -907,47 +1047,79 @@
       </div>
     </div>
 
-    <!-- Panel 1: Meet the Founder -->
+    <!-- Panel 1: Meet the Co-Founders -->
     <div class="about-panel" id="ap1" role="tabpanel" aria-labelledby="atab-1">
+
       <div class="owner-card rv">
         <div class="owner-card-header">
-          <div class="owner-avatar">NK</div>
-          <div class="owner-role">Founder &amp; CEO</div>
-          <div class="owner-name">Novera Labs</div>
+          <div class="owner-avatar">
+            <img src="assets/team/animesh-pal.jpg" alt="Animesh Pal" onerror="this.style.display='none'"/>
+            AP
+          </div>
+          <div class="owner-role">Co-Founder</div>
+          <div class="owner-name">Animesh Pal</div>
           <div class="owner-tags">
-            <span class="owner-tag">✓ Full-Stack Developer</span>
-            <span class="owner-tag">✓ Varanasi-Based</span>
+            <span class="owner-tag">✓ Full-Stack Dev</span>
+            <span class="owner-tag">✓ AI &amp; Automation</span>
             <span class="owner-tag">✓ Client-First</span>
           </div>
         </div>
-        <div class="owner-stats">
-          <div class="owner-stat">
-            <div class="owner-stat-num">50<span style="color:var(--brand)">+</span></div>
-            <div class="owner-stat-lbl">Projects</div>
+        <div class="owner-bio">
+          Animesh drives the technical vision at Novera Labs — architecting web and AI-powered products that are fast, scalable, and built to last. Passionate about making cutting-edge tech accessible to businesses of every size.
+        </div>
+        <div class="owner-btns">
+          <a href="mailto:hello@noveralabs.co.in" class="btn btn-primary btn-sm">Email Us</a>
+        </div>
+      </div>
+
+      <div class="owner-card rv" style="margin-top:10px;">
+        <div class="owner-card-header">
+          <div class="owner-avatar">
+            <img src="assets/team/umar-sultan.jpg" alt="Umar Sultan" onerror="this.style.display='none'"/>
+            US
           </div>
-          <div class="owner-stat">
-            <div class="owner-stat-num" style="color:var(--brand)">0</div>
-            <div class="owner-stat-lbl">Hidden Fees</div>
-          </div>
-          <div class="owner-stat">
-            <div class="owner-stat-num">3<span style="color:var(--brand)">+</span></div>
-            <div class="owner-stat-lbl">Years</div>
+          <div class="owner-role">Co-Founder</div>
+          <div class="owner-name">Umar Sultan</div>
+          <div class="owner-tags">
+            <span class="owner-tag">✓ Digital Marketing</span>
+            <span class="owner-tag">✓ Performance Ads</span>
+            <span class="owner-tag">✓ Growth Strategy</span>
           </div>
         </div>
         <div class="owner-bio">
-          Passionate about helping businesses across Uttar Pradesh grow through technology. Built Novera Labs on the belief that great digital work should be accessible to every business not just the big ones. No false promises, no inflated retainers just craft, clarity, and real results.
-        </div>
-        <div class="owner-quote">
-          "Build something that works, and works for your client. The rest follows."
+          Umar leads growth and performance marketing at Novera Labs — turning ad spend into measurable results. He brings deep expertise in Google Ads, Meta campaigns, and data-driven strategies that move the needle.
         </div>
         <div class="owner-btns">
-          <a href="tel:+918888888888" class="btn btn-primary btn-sm">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-            Call Directly
-          </a>
-          <a href="mailto:hello@noveralabs.co.in" class="btn btn-ghost btn-sm">Email Us</a>
+          <a href="mailto:hello@noveralabs.co.in" class="btn btn-primary btn-sm">Email Us</a>
         </div>
       </div>
+
+      <div class="owner-card rv" style="margin-top:10px;">
+        <div class="owner-card-header">
+          <div class="owner-avatar">
+            <img src="assets/team/abhigyan-singh.jpg" alt="Abhigyan Singh" onerror="this.style.display='none'"/>
+            AS
+          </div>
+          <div class="owner-role">Co-Founder</div>
+          <div class="owner-name">Abhigyan Singh</div>
+          <div class="owner-tags">
+            <span class="owner-tag">✓ Content Creation</span>
+            <span class="owner-tag">✓ Brand Strategy</span>
+            <span class="owner-tag">✓ Social Media</span>
+          </div>
+        </div>
+        <div class="owner-bio">
+          Abhigyan shapes how Novera Labs' clients tell their story — leading content creation, brand identity, and social media strategy. He believes every business has a powerful story; his job is making sure the world hears it.
+        </div>
+        <div class="owner-btns">
+          <a href="mailto:hello@noveralabs.co.in" class="btn btn-primary btn-sm">Email Us</a>
+        </div>
+      </div>
+
+      <div class="owner-quote rv" style="margin-top:10px;">
+        "Three perspectives, one mission — build honest digital products that actually grow businesses."
+      </div>
+
     </div>
   </div>
 </section>
@@ -957,13 +1129,14 @@
   <div class="sec-inner">
     <div class="sec-eye rv"><span class="sec-eye-line"></span>What We Do</div>
     <h2 class="sec-title rv">OUR<br>SERVICES</h2>
-    <p class="sec-body rv">From concept to launch we build digital products that perform, powered by modern tech and AI. No fluff, just craft.</p>
+    <p class="sec-body rv">From concept to launch — web, apps, marketing, content, design, and AI. No fluff, just craft and real results.</p>
 
     <div class="srv-tabs rv" role="tablist" aria-label="Service categories">
       <button class="srv-tab active" onclick="switchSrvTab(0)" role="tab" aria-selected="true" aria-controls="sp0" id="tab-0">Web &amp; App</button>
       <button class="srv-tab" onclick="switchSrvTab(1)" role="tab" aria-selected="false" aria-controls="sp1" id="tab-1">Growth</button>
-      <button class="srv-tab" onclick="switchSrvTab(2)" role="tab" aria-selected="false" aria-controls="sp2" id="tab-2">Design</button>
-      <button class="srv-tab" onclick="switchSrvTab(3)" role="tab" aria-selected="false" aria-controls="sp3" id="tab-3">AI</button>
+      <button class="srv-tab" onclick="switchSrvTab(2)" role="tab" aria-selected="false" aria-controls="sp2" id="tab-2">Marketing</button>
+      <button class="srv-tab" onclick="switchSrvTab(3)" role="tab" aria-selected="false" aria-controls="sp3" id="tab-3">Design</button>
+      <button class="srv-tab" onclick="switchSrvTab(4)" role="tab" aria-selected="false" aria-controls="sp4" id="tab-4">AI</button>
     </div>
 
     <!-- Panel 0: Web & App -->
@@ -1006,12 +1179,32 @@
       </div>
     </div>
 
-    <!-- Panel 2: Design -->
+    <!-- Panel 2: Marketing -->
     <div class="service-panel" id="sp2" role="tabpanel" aria-labelledby="tab-2">
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/digital-marketing.jpg" alt="Digital Marketing" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">05 · Marketing</div>
+          <div class="srv-card-name">Digital &amp; Performance Marketing</div>
+          <div class="srv-card-desc">Data-driven campaigns across Google Ads, Meta, and more. We manage your ad spend to maximise ROI — every rupee tracked, every conversion measured.</div>
+        </div>
+      </div>
+      <div class="srv-card rv">
+        <img class="srv-card-img" src="assets/content-creation.jpg" alt="Content Creation" loading="lazy"/>
+        <div class="srv-card-body">
+          <div class="srv-card-num">06 · Content</div>
+          <div class="srv-card-name">Content Creation</div>
+          <div class="srv-card-desc">Scroll-stopping reels, graphics, copywriting, and brand storytelling — content crafted to engage your audience and grow your business across every platform.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3: Design -->
+    <div class="service-panel" id="sp3" role="tabpanel" aria-labelledby="tab-3">
       <div class="srv-card rv">
         <img class="srv-card-img" src="assets/ui_ux-design.jpg" alt="UI/UX Design" loading="lazy"/>
         <div class="srv-card-body">
-          <div class="srv-card-num">05 · Design</div>
+          <div class="srv-card-num">07 · Design</div>
           <div class="srv-card-name">UI / UX Design</div>
           <div class="srv-card-desc">Interfaces people love to use. We design with purpose every pixel, every interaction, every flow crafted for real users.</div>
         </div>
@@ -1019,35 +1212,35 @@
       <div class="srv-card rv">
         <img class="srv-card-img" src="assets/digital-solutions.jpg" alt="Digital Solutions" loading="lazy"/>
         <div class="srv-card-body">
-          <div class="srv-card-num">06 · Solutions</div>
+          <div class="srv-card-num">08 · Solutions</div>
           <div class="srv-card-name">Digital Solutions</div>
           <div class="srv-card-desc">Custom integrations, automation, CRM setup, and digital strategy consulting. We solve complex problems with clean solutions.</div>
         </div>
       </div>
     </div>
 
-    <!-- Panel 3: AI -->
-    <div class="service-panel" id="sp3" role="tabpanel" aria-labelledby="tab-3">
+    <!-- Panel 4: AI -->
+    <div class="service-panel" id="sp4" role="tabpanel" aria-labelledby="tab-4">
       <div class="srv-card rv">
-        <img class="srv-card-img" src="aichatbotandassistants.jpg" alt="AI Chatbots and Assistants" loading="lazy"/>
+        <img class="srv-card-img" src="assets/aichatbotandassistants.jpg" alt="AI Chatbots and Assistants" loading="lazy"/>
         <div class="srv-card-body">
-          <div class="srv-card-num">07 · AI</div>
+          <div class="srv-card-num">09 · AI</div>
           <div class="srv-card-name">AI Chatbots &amp; Assistants</div>
           <div class="srv-card-desc">Custom AI chatbots trained on your business for customer support, lead capture, and 24/7 engagement. Built directly into your website or app.</div>
         </div>
       </div>
       <div class="srv-card rv">
-        <img class="srv-card-img" src="AI-Automation.jpg" alt="AI Automation" loading="lazy"/>
+        <img class="srv-card-img" src="assets/AI-Automation.jpg" alt="AI Automation" loading="lazy"/>
         <div class="srv-card-body">
-          <div class="srv-card-num">08 · AI</div>
+          <div class="srv-card-num">10 · AI</div>
           <div class="srv-card-name">AI Automation</div>
           <div class="srv-card-desc">Automate repetitive tasks invoicing, follow-ups, reporting, data processing. We integrate AI into your existing workflows so your team focuses on what matters.</div>
         </div>
       </div>
       <div class="srv-card rv">
-        <img class="srv-card-img" src="Smart-Product-Features.jpg" alt="Smart Product Features" loading="lazy"/>
+        <img class="srv-card-img" src="assets/Smart-Product-Features.jpg" alt="Smart Product Features" loading="lazy"/>
         <div class="srv-card-body">
-          <div class="srv-card-num">09 · AI</div>
+          <div class="srv-card-num">11 · AI</div>
           <div class="srv-card-name">Smart Product Features</div>
           <div class="srv-card-desc">Recommendation engines, intelligent search, predictive analytics, and personalisation we embed AI features into your product that users actually feel.</div>
         </div>
@@ -1194,65 +1387,96 @@
     <div class="team-grid">
 
       <div class="team-card rv">
-        <div class="team-avatar">AK</div>
+        <div class="team-avatar">
+          <img src="assets/team/animesh-pal.jpg" alt="Animesh Pal" onerror="this.style.display='none'"/>
+          AP
+        </div>
         <div class="team-info">
-          <div class="team-name">Arjun Khanna</div>
-          <div class="team-role">Lead Developer</div>
+          <div class="team-name">Animesh Pal</div>
+          <div class="team-role">Co-Founder</div>
           <div class="team-skills">
-            <span class="team-skill">React</span>
-            <span class="team-skill">Next.js</span>
-            <span class="team-skill">Node.js</span>
+            <span class="team-skill">Full-Stack Dev</span>
+            <span class="team-skill">AI</span>
+            <span class="team-skill">Web Apps</span>
           </div>
         </div>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Arjun on LinkedIn">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Animesh on LinkedIn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
 
       <div class="team-card rv">
-        <div class="team-avatar">PS</div>
+        <div class="team-avatar">
+          <img src="assets/team/umar-sultan.jpg" alt="Umar Sultan" onerror="this.style.display='none'"/>
+          US
+        </div>
         <div class="team-info">
-          <div class="team-name">Priya Singh</div>
-          <div class="team-role">UI / UX Designer</div>
+          <div class="team-name">Umar Sultan</div>
+          <div class="team-role">Co-Founder</div>
           <div class="team-skills">
-            <span class="team-skill">Figma</span>
-            <span class="team-skill">Prototyping</span>
-            <span class="team-skill">User Research</span>
+            <span class="team-skill">Performance Mktg</span>
+            <span class="team-skill">Google Ads</span>
+            <span class="team-skill">Meta Ads</span>
           </div>
         </div>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Priya on LinkedIn">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Umar on LinkedIn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
 
       <div class="team-card rv">
-        <div class="team-avatar">RV</div>
+        <div class="team-avatar">
+          <img src="assets/team/abhigyan-singh.jpg" alt="Abhigyan Singh" onerror="this.style.display='none'"/>
+          AS
+        </div>
         <div class="team-info">
-          <div class="team-name">Rohit Verma</div>
-          <div class="team-role">SEO &amp; Growth</div>
+          <div class="team-name">Abhigyan Singh</div>
+          <div class="team-role">Co-Founder</div>
           <div class="team-skills">
-            <span class="team-skill">Technical SEO</span>
-            <span class="team-skill">Local SEO</span>
-            <span class="team-skill">Analytics</span>
+            <span class="team-skill">Content Creation</span>
+            <span class="team-skill">Brand Strategy</span>
+            <span class="team-skill">Social Media</span>
           </div>
         </div>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Rohit on LinkedIn">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Abhigyan on LinkedIn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
 
       <div class="team-card rv">
-        <div class="team-avatar">MJ</div>
+        <div class="team-avatar">
+          <img src="assets/team/rahul-gupta.jpg" alt="Rahul Gupta" onerror="this.style.display='none'"/>
+          RG
+        </div>
         <div class="team-info">
-          <div class="team-name">Mehak Joshi</div>
-          <div class="team-role">Mobile &amp; Flutter Dev</div>
+          <div class="team-name">Rahul Gupta</div>
+          <div class="team-role">Video Editor</div>
           <div class="team-skills">
-            <span class="team-skill">Flutter</span>
-            <span class="team-skill">Firebase</span>
-            <span class="team-skill">Android</span>
+            <span class="team-skill">Video Editing</span>
+            <span class="team-skill">Reels</span>
+            <span class="team-skill">Post Production</span>
           </div>
         </div>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Mehak on LinkedIn">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Rahul on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+
+      <div class="team-card rv">
+        <div class="team-avatar">
+          <img src="assets/team/sheikh-salman.jpg" alt="Sheikh Salman" onerror="this.style.display='none'"/>
+          SS
+        </div>
+        <div class="team-info">
+          <div class="team-name">Sheikh Salman</div>
+          <div class="team-role">Social Media Manager</div>
+          <div class="team-skills">
+            <span class="team-skill">Instagram</span>
+            <span class="team-skill">Facebook</span>
+            <span class="team-skill">Scheduling</span>
+          </div>
+        </div>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-social" aria-label="Salman on LinkedIn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
@@ -1440,6 +1664,8 @@
             <option>Web Development</option>
             <option>App Development</option>
             <option>SEO</option>
+            <option>Digital Marketing / Performance Marketing</option>
+            <option>Content Creation</option>
             <option>Social Media</option>
             <option>UI / UX Design</option>
             <option>Digital Solutions</option>
@@ -1470,7 +1696,7 @@
   </video>
   <div class="footer-inner">
     <img src="assets/noveralabs.webp" alt="Novera Labs" class="footer-logo-img"/>
-    <div class="footer-tagline">Empowering your digital journey with web, app &amp; AI-powered solutions. Two branches in Varanasi &amp; across Uttar Pradesh.</div>
+    <div class="footer-tagline">Web, app, digital marketing, content creation &amp; AI-powered solutions. Two branches in Varanasi &amp; across Uttar Pradesh.</div>
     <a href="tel:+918888888888" class="footer-tel">+91 88888 88888</a>
     <div class="footer-socials">
       <a href="#" class="footer-soc" aria-label="Instagram">
@@ -1548,7 +1774,15 @@ const srvTabs = document.querySelectorAll('.srv-tab');
 const srvPanels = document.querySelectorAll('.service-panel');
 function switchSrvTab(i) {
   srvTabs.forEach((t,j) => { t.classList.toggle('active', i===j); t.setAttribute('aria-selected', i===j); });
-  srvPanels.forEach((p,j) => p.classList.toggle('active', i===j));
+  srvPanels.forEach((p,j) => {
+    p.classList.toggle('active', i===j);
+    if (i===j) {
+      // Force-reveal any .rv elements that the IntersectionObserver may have missed
+      p.querySelectorAll('.rv').forEach((el, idx) => {
+        setTimeout(() => el.classList.add('vis'), Math.min(idx, 4) * 80);
+      });
+    }
+  });
 }
 
 /* ── About tabs ── */
@@ -1627,6 +1861,12 @@ function callAI(q) {
   if (/social|instagram|facebook|linkedin|content/.test(text))
     return Promise.resolve("We manage strategy, content creation, and day-to-day management across Instagram, Facebook, and LinkedIn. Get in touch at hello@noveralabs.co.in.");
 
+  if (/digital marketing|performance marketing|google ads|meta ads|paid ads|ppc|campaigns|ad spend/.test(text))
+    return Promise.resolve("We run data-driven performance marketing campaigns on Google Ads, Meta (Facebook & Instagram), and more. Every rupee of ad spend is tracked and optimised for maximum ROI. Email hello@noveralabs.co.in to discuss your goals.");
+
+  if (/content creation|reels|graphics|copywriting|brand story|video|creative/.test(text))
+    return Promise.resolve("We create scroll-stopping content — reels, graphics, copywriting, and brand storytelling — tailored for Instagram, YouTube, LinkedIn, and beyond. Reach us at hello@noveralabs.co.in to start creating.");
+
   if (/design|ui|ux|figma|wireframe/.test(text))
     return Promise.resolve("We design interfaces people love from wireframes to full UI systems. Every pixel crafted for real users. Email hello@noveralabs.co.in to share your brief.");
 
@@ -1636,8 +1876,11 @@ function callAI(q) {
   if (/ai|artificial intelligence|chatbot|automation|smart|machine learning/.test(text))
     return Promise.resolve("We build AI-powered solutions custom chatbots, workflow automation, smart product features, and AI integrations. We use OpenAI, Claude, and LangChain to bring real intelligence into your business. Email hello@noveralabs.co.in to explore what's possible.");
 
-  if (/service|offer|what do you|what can you/.test(text))
-    return Promise.resolve("We offer Web Development, App Development, SEO, Social Media Management, UI/UX Design, AI Solutions, and Digital Automation. Which one can we help you with?");
+  if (/founder|co-founder|team|who started|who built|animesh|umar|abhigyan/.test(text))
+    return Promise.resolve("Novera Labs was founded by three co-founders: Animesh Pal (Full-Stack Dev & AI), Umar Sultan (Digital & Performance Marketing), and Abhigyan Singh (Content Creation & Brand Strategy). Together they cover every pillar of your digital growth.");
+
+
+    return Promise.resolve("We offer Web Development, App Development, SEO, Digital Marketing, Performance Marketing, Content Creation, Social Media Management, UI/UX Design, AI Solutions, and Digital Automation. Which one can we help you with?");
 
   if (/location|address|office|where|branch|varanasi/.test(text))
     return Promise.resolve("We have two offices in Varanasi Branch 1: K.38/1, Golghar, Ghasi Tola (2nd Floor, 221001). Branch 2: Swastik City Center, Rathyatra–Mahmoorganj Rd, Jahumandi (221002).");
@@ -1706,7 +1949,7 @@ const legalContent = {
     body: `<h3>1. Acceptance of Terms</h3>
 <p>By engaging Novera Labs for services, you agree to these Terms of Service. If you do not agree, please do not engage our services.</p>
 <h3>2. Services</h3>
-<p>Novera Labs provides web development, app development, SEO, social media management, UI/UX design, and digital solutions. Specific deliverables, timelines, and pricing are defined in individual project proposals.</p>
+<p>Novera Labs provides web development, app development, SEO, digital marketing, performance marketing, content creation, social media management, UI/UX design, and digital solutions. Specific deliverables, timelines, and pricing are defined in individual project proposals.</p>
 <h3>3. Payment</h3>
 <p>Payment terms are outlined in each project proposal. Typically, a 50% deposit is required to begin work, with the balance due upon project completion. All prices are inclusive of applicable GST.</p>
 <h3>4. Intellectual Property</h3>
